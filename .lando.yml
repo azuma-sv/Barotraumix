@@ -1,0 +1,8 @@
+name: barotrauma-mod-portal
+recipe: drupal9
+config:
+  webroot: web
+service:
+  steamcmd:
+    type: steamcmd:latest
+    webroot: web
