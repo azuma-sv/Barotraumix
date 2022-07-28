@@ -23,3 +23,7 @@
 
 # Ignore .env files as they are personal
 /.env
+/tips.txt
+
+# Ignore game sources.
+/sources

@@ -1,0 +1,3 @@
+services:
+  bmp_core.core:
+    class: Drupal\bmp_core\BMPCore
