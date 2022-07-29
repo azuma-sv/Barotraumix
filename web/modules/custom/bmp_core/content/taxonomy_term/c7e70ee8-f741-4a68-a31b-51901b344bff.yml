@@ -1,0 +1,29 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: c7e70ee8-f741-4a68-a31b-51901b344bff
+  bundle: asset
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: Text
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  field_xml_tag:
+    -
+      value: Text

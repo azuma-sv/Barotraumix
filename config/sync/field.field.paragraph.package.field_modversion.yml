@@ -1,0 +1,19 @@
+uuid: bf3c7d0b-bde0-423e-9af6-9b4e72e2d45f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_modversion
+    - paragraphs.paragraphs_type.package
+id: paragraph.package.field_modversion
+field_name: field_modversion
+entity_type: paragraph
+bundle: package
+label: 'Mod version'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

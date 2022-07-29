@@ -1,0 +1,45 @@
+uuid: 3b63b8de-9089-4dc2-8fdf-ef77036912ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.assets.field_asset_type
+    - field.field.paragraph.assets.field_attributes
+    - field.field.paragraph.assets.field_file
+    - paragraphs.paragraphs_type.assets
+  module:
+    - paragraphs
+id: paragraph.assets.default
+targetEntityType: paragraph
+bundle: assets
+mode: default
+content:
+  field_asset_type:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_attributes:
+    type: entity_reference_paragraphs
+    weight: 2
+    region: content
+    settings:
+      title: Attribute
+      title_plural: Attributes
+      edit_mode: open
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_file:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -1,0 +1,19 @@
+uuid: e21d8eef-8c85-4b64-bfa4-42646b95a745
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_altnames
+    - paragraphs.paragraphs_type.package
+id: paragraph.package.field_altnames
+field_name: field_altnames
+entity_type: paragraph
+bundle: package
+label: 'Alternative names'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

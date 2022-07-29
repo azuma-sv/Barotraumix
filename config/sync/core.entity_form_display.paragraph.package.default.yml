@@ -1,0 +1,78 @@
+uuid: 1cd28973-bac3-4d29-b8e1-70a257ac1b91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.package.field_altnames
+    - field.field.paragraph.package.field_assets
+    - field.field.paragraph.package.field_attributes
+    - field.field.paragraph.package.field_gameversion
+    - field.field.paragraph.package.field_modversion
+    - field.field.paragraph.package.field_name
+    - paragraphs.paragraphs_type.package
+  module:
+    - paragraphs
+id: paragraph.package.default
+targetEntityType: paragraph
+bundle: package
+mode: default
+content:
+  field_altnames:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_assets:
+    type: entity_reference_paragraphs
+    weight: 5
+    region: content
+    settings:
+      title: Asset
+      title_plural: Assets
+      edit_mode: open
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_attributes:
+    type: entity_reference_paragraphs
+    weight: 4
+    region: content
+    settings:
+      title: 'Content package attribute'
+      title_plural: 'Content package attributes'
+      edit_mode: open
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+    third_party_settings: {  }
+  field_gameversion:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_modversion:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

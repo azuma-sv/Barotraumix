@@ -1,0 +1,30 @@
+uuid: cbf7dbd3-b764-435f-8f59-c6085d2120a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.attribute.field_name
+    - field.field.paragraph.attribute.field_value
+    - paragraphs.paragraphs_type.attribute
+id: paragraph.attribute.default
+targetEntityType: paragraph
+bundle: attribute
+mode: default
+content:
+  field_name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_value:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

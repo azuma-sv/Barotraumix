@@ -1,0 +1,30 @@
+uuid: ad59e842-2136-42de-9ffc-8ed094ffcdc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.asset.field_xml_tag
+    - taxonomy.vocabulary.asset
+  module:
+    - text
+id: taxonomy_term.asset.default
+targetEntityType: taxonomy_term
+bundle: asset
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_xml_tag:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

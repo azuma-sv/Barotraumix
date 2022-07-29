@@ -1,0 +1,34 @@
+uuid: d8697eec-0cd1-483d-a6c9-ec5351ddae6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_assets
+    - paragraphs.paragraphs_type.assets
+    - paragraphs.paragraphs_type.package
+  module:
+    - entity_reference_revisions
+id: paragraph.package.field_assets
+field_name: field_assets
+entity_type: paragraph
+bundle: package
+label: Assets
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      assets: assets
+    negate: 0
+    target_bundles_drag_drop:
+      assets:
+        weight: 3
+        enabled: true
+      package:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

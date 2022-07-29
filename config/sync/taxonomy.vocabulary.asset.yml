@@ -1,0 +1,8 @@
+uuid: 46b54487-0525-4912-aa95-cbcc954688b2
+langcode: en
+status: true
+dependencies: {  }
+name: 'Asset type'
+vid: asset
+description: 'Define different types of assets which might be referenced by a content package.'
+weight: 0

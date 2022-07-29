@@ -1,0 +1,10 @@
+uuid: 1e5f6036-2469-44bd-95cd-b57773cc5a11
+langcode: en
+status: true
+dependencies: {  }
+id: package
+label: 'Content Package'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

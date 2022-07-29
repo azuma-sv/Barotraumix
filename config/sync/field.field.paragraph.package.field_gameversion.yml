@@ -1,0 +1,19 @@
+uuid: 178eeaa3-5228-4baf-9ea9-feacf3a134d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gameversion
+    - paragraphs.paragraphs_type.package
+id: paragraph.package.field_gameversion
+field_name: field_gameversion
+entity_type: paragraph
+bundle: package
+label: 'Game version'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

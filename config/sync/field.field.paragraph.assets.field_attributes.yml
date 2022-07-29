@@ -1,0 +1,37 @@
+uuid: 19f32dbe-c689-4702-993b-2ccd1cec80f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_attributes
+    - paragraphs.paragraphs_type.assets
+    - paragraphs.paragraphs_type.attribute
+  module:
+    - entity_reference_revisions
+id: paragraph.assets.field_attributes
+field_name: field_attributes
+entity_type: paragraph
+bundle: assets
+label: Attributes
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      attribute: attribute
+    negate: 0
+    target_bundles_drag_drop:
+      assets:
+        weight: 4
+        enabled: false
+      attribute:
+        weight: 5
+        enabled: true
+      package:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

@@ -4,8 +4,11 @@ status: true
 dependencies:
   config:
     - field.field.node.application.body
+    - field.field.node.application.field_application_type
+    - field.field.node.application.field_content_package
     - node.type.application
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.application.default
@@ -18,11 +21,24 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 1
     region: content
-  links:
-    settings: {  }
+  field_application_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
-hidden: {  }
+  field_content_package:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  links: true

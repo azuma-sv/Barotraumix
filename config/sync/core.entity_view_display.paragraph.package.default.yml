@@ -1,0 +1,70 @@
+uuid: ff036926-686c-4e63-a5c4-54ea290bf53c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.package.field_altnames
+    - field.field.paragraph.package.field_assets
+    - field.field.paragraph.package.field_attributes
+    - field.field.paragraph.package.field_gameversion
+    - field.field.paragraph.package.field_modversion
+    - field.field.paragraph.package.field_name
+    - paragraphs.paragraphs_type.package
+  module:
+    - entity_reference_revisions
+id: paragraph.package.default
+targetEntityType: paragraph
+bundle: package
+mode: default
+content:
+  field_altnames:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_assets:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_attributes:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_gameversion:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_modversion:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_name:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

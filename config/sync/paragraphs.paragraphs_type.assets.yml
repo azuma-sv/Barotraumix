@@ -1,0 +1,10 @@
+uuid: a468abdc-2bb9-4150-8900-3cb24e88dc9a
+langcode: en
+status: true
+dependencies: {  }
+id: assets
+label: Assets
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

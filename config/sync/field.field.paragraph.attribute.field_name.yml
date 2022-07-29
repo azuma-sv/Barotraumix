@@ -1,0 +1,19 @@
+uuid: 152d166c-541c-4da2-8dc2-9bf4bdc11596
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_name
+    - paragraphs.paragraphs_type.attribute
+id: paragraph.attribute.field_name
+field_name: field_name
+entity_type: paragraph
+bundle: attribute
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

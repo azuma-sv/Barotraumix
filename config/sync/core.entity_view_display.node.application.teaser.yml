@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.application.body
+    - field.field.node.application.field_application_type
+    - field.field.node.application.field_content_package
     - node.type.application
   module:
     - text
@@ -20,11 +22,9 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
-    region: content
-hidden: {  }
+hidden:
+  field_application_type: true
+  field_content_package: true
+  links: true

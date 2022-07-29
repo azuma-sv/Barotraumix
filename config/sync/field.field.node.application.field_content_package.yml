@@ -1,0 +1,37 @@
+uuid: 30742563-d65a-416c-a755-bae760d2d24b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_package
+    - node.type.application
+    - paragraphs.paragraphs_type.package
+  module:
+    - entity_reference_revisions
+id: node.application.field_content_package
+field_name: field_content_package
+entity_type: node
+bundle: application
+label: 'Content Package'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      package: package
+    negate: 0
+    target_bundles_drag_drop:
+      assets:
+        weight: 4
+        enabled: false
+      attribute:
+        weight: 5
+        enabled: false
+      package:
+        weight: 6
+        enabled: true
+field_type: entity_reference_revisions

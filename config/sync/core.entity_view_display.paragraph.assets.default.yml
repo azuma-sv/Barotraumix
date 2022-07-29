@@ -1,0 +1,42 @@
+uuid: a86ca025-7888-4177-acb6-70a9285d8fdd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.assets.field_asset_type
+    - field.field.paragraph.assets.field_attributes
+    - field.field.paragraph.assets.field_file
+    - paragraphs.paragraphs_type.assets
+  module:
+    - entity_reference_revisions
+id: paragraph.assets.default
+targetEntityType: paragraph
+bundle: assets
+mode: default
+content:
+  field_asset_type:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_attributes:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_file:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

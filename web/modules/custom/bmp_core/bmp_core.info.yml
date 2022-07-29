@@ -3,3 +3,10 @@ type: module
 description: 'Core module with hard backend functionality.'
 package: BMP
 core_version_requirement: 9.x
+
+default_content:
+  taxonomy_term:
+    - 494a8d9f-b46f-490a-b0c3-7694ef0e6c7d
+    - 162c4e6f-de34-4f1f-915b-267ef430f1c2
+    - 4f5a38e1-d44e-4e01-9335-c63cc2b865fe
+    - c7e70ee8-f741-4a68-a31b-51901b344bff
