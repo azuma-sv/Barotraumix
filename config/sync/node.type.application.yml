@@ -1,0 +1,17 @@
+uuid: c4b3620d-9355-4c80-b5e6-ed88eab98b99
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Application
+type: application
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

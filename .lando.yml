@@ -2,20 +2,17 @@ name: barotrauma-mod-portal
 recipe: drupal9
 config:
   webroot: web
+  via: nginx
+  # TODO: Move to local config file (should be ignored by GIT).
+  xdebug: true
 services:
   appserver:
-    type: php:8.1
-    build_as_root:
-      - apt-get -q -y update
-      - apt-get install software-properties-common -y
-      - apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 40976EAF437D05B5
-      - apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32
-      - dpkg --add-architecture i386
-      - add-apt-repository "deb http://archive.ubuntu.com/ubuntu xenial main universe multiverse"
-      - add-apt-repository "deb http://archive.ubuntu.com/ubuntu xenial-updates main universe multiverse"
-      - add-apt-repository "deb http://archive.ubuntu.com/ubuntu xenial-security main universe multiverse"
-      - apt-get -q -y update
-      - echo steam steam/question select "I AGREE" | debconf-set-selections
-      - echo steam steam/license note '' | debconf-set-selections
-      - apt-get install lib32gcc-s1 steamcmd -y
-      - ln -sf /usr/games/steamcmd /usr/bin/steamcmd
+    # TODO: Move to local config file (should be ignored by GIT).
+    xdebug: true
+    overrides:
+      image: azumasv/barotraumamodportal:devwithlando-php-fpm
+      environment:
+        BAROTRAUMA_SOURCE_FILES: "sites/default/barotrauma"
+        # Support debugging CLI with XDEBUG.
+        PHP_IDE_CONFIG: "serverName=bmp"
+        XDEBUG_SESSION_START: lando

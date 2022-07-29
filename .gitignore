@@ -25,5 +25,6 @@
 /.env
 /tips.txt
 
-# Ignore game sources.
-/sources
+# Ignore other filesystems.
+/private
+/web/sites/*/barotrauma

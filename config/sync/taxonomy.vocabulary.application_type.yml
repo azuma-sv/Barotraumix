@@ -1,0 +1,8 @@
+uuid: 19dbfb3e-b434-4ccd-a449-eb676b298e11
+langcode: en
+status: true
+dependencies: {  }
+name: 'Application type'
+vid: application_type
+description: 'Barotrauma or Mod'
+weight: 0

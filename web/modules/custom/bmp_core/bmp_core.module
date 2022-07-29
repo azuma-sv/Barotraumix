@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Global API functions and hooks.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\bmp_core\StreamWrapper\BaroStreamWrapper;
+
+/**
+ * Implements hook_form_alter().
+ */
+function bmp_core_form_alter(&$form, FormStateInterface $form_state, $form_id): void {
+  // @todo: Remove.
+}
+
+/**
+ * Implements hook_form_%FORM_ID%_alter().
+ */
+function bmp_core_form_system_file_system_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id): void {
+  // Set order for existing elements.
+  $form['file_public_path']['#weight'] = -10;
+  $form['file_public_base_url']['#weight'] = -5;
+
+  /** @var BaroStreamWrapper $baroStreamWrapper */
+  $baroStreamWrapper = \Drupal::service('stream_wrapper_manager')->getViaScheme('baro');
+  // Define value for our own stream wrapper.
+  $form['file_barotrauma_path'] = $form['file_public_path'];
+  $form['file_barotrauma_path']['#title'] = $baroStreamWrapper->getName();
+  $form['file_barotrauma_path']['#description'] = $baroStreamWrapper->getDescription();
+  $form['file_barotrauma_path']['#markup'] = BaroStreamWrapper::basePath();
+  $form['file_barotrauma_path']['#weight'] = 0;
+}

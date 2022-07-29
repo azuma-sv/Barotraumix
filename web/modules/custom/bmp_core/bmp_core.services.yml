@@ -1,3 +1,12 @@
 services:
   bmp_core.core:
-    class: Drupal\bmp_core\BMPCore
+    class: Drupal\bmp_core\BMP\BMPCore
+  bmp_core.commands:
+    class: \Drupal\bmp_core\Commands\BaroTraumaAppInfo
+    arguments: ['@bmp_core.core']
+    tags:
+      - { name: drush.command }
+  bmp_core.stream_wrapper:
+    class: Drupal\bmp_core\StreamWrapper\BaroStreamWrapper
+    tags:
+      - { name: stream_wrapper, scheme: baro }

@@ -2,7 +2,7 @@ _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
 uuid: 0cbc4e56-2d16-4540-8928-512ad7e1e874
-name: 'Drush Site-Install'
+name: 'Barotrauma Mod Portal'
 mail: admin@example.com
 slogan: ''
 page:
