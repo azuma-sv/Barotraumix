@@ -10,3 +10,4 @@ services:
     class: Drupal\bmp_core\StreamWrapper\BaroStreamWrapper
     tags:
       - { name: stream_wrapper, scheme: baro }
+

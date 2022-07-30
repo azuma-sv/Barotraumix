@@ -5,7 +5,9 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.application.body
+    - field.field.node.application.field_app_id
     - field.field.node.application.field_application_type
+    - field.field.node.application.field_build_id
     - field.field.node.application.field_content_package
     - node.type.application
   module:
@@ -25,6 +27,8 @@ content:
     weight: 0
     region: content
 hidden:
+  field_app_id: true
   field_application_type: true
+  field_build_id: true
   field_content_package: true
   links: true

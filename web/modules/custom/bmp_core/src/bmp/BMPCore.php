@@ -6,6 +6,8 @@
 
 namespace Drupal\bmp_core\BMP;
 
+use Drupal;
+
 /**
  * Class BMPCore for main BMP Core service.
  */
@@ -42,19 +44,78 @@ class BMPCore implements BMPCoreInterface {
   /**
    * @inheritDoc
    */
-  public function getRawSteamCommand(): string {
+  public function steamAppUpdate(int $appId = BMPCoreInterface::BAROTRAUMA_APP_ID): bool {
+    // Get app build id from Steam.
+    // @todo: Uncomment.
+//    $buildId = $this->steamGetBuildId($appId);
+    // @todo: Remove.
+    $buildId = 9118874;
+    if (empty($buildId)) {
+      return FALSE;
+    }
+
+    // Ensure that available update is not a current one.
+    $query = Drupal::entityQuery('node');
+    $query->condition('type', 'application');
+    $query->condition('field_app_id', $appId, '=');
+    $query->condition('field_build_id', $buildId,'=');
+    $query->count();
+    $exists = $query->execute();
+
+    // We already have an update.
+    if (!empty($exists)) {
+      // @todo: Print a message somehow.
+      return TRUE;
+    }
+
+    // Download an update.
+    // @todo: Dependency injection for this block of code.
+    $uri = 'baro://' . $appId . '/' . $buildId;
+    /** @var \Drupal\Core\File\FileSystemInterface $fileSystem */
+    $fileSystem = \Drupal::service('file_system');
+    $dirStatus = $fileSystem->prepareDirectory($uri, Drupal\Core\File\FileSystemInterface::CREATE_DIRECTORY);
+    if (!$dirStatus) {
+      // @todo: Print a message somehow.
+      return FALSE;
+    }
+
+    // Get real path for steamcmd and prepare command.
+    $path = $fileSystem->realpath($uri);
+    $command = '+force_install_dir ' . $path;
+    $command .= ' +login anonymous';
+    $command .= ' +app_update ' . $appId . ' validate';
+    // @todo: Uncomment later.
+    $this->steamRunCommand($command, FALSE);
+//    $command = 'find ' . $path . ' -type d -exec chmod 0755 {} +';
+//    shell_exec('find ' . $path . ' -type d -exec chown 0755 {} +');
+//    shell_exec('find ' . $path . ' -type d -exec chmod 0755 {} +');
+
+    // todo: Move to another method.
+    /** @var \Drupal\bmp_core\BMP\Parser $parser */
+    $parser = new Parser($appId, $buildId);
+    $contentPackage = $parser->contentPackage();
+
+    return TRUE;
+  }
+
+  /**
+   * @inheritDoc
+   */
+  public function getRawSteamCommand(): null|string {
     return $this->rawSteamCommand;
   }
 
   /**
    * @inheritDoc
    */
-  public function getRawSteamCommandOutput(): string {
+  public function getRawSteamCommandOutput(): null|string {
     return $this->rawSteamCommandOutput;
   }
 
   /**
    * Method to run steam-cmd command.
+   *
+   * @todo: Implement static cache for executed commands.
    *
    * @param string $command
    *  Command to run.
@@ -62,9 +123,9 @@ class BMPCore implements BMPCoreInterface {
    * @param bool $login
    *  Will log in as anonymous user.
    *
-   * @return string|null
+   * @return null|string
    */
-  protected function steamRunCommand(string $command, bool $login = TRUE): string|null {
+  protected function steamRunCommand(string $command, bool $login = TRUE): null|string {
     // Prepare command prefix and suffix.
     $prefix = 'steamcmd +@ShutdownOnFailedCommand 1 +@NoPromptForPassword 1 ';
     if ($login) {

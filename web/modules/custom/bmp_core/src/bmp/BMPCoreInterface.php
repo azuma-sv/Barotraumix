@@ -20,21 +20,31 @@ interface BMPCoreInterface {
    * @param int $appId
    *  ID of the application. Barotrauma App ID will be used as default value.
    *
-   * @return string|null
+   * @return null|string
    */
   public function steamGetBuildId(int $appId = BMPCoreInterface::BAROTRAUMA_APP_ID): null|string;
 
   /**
+   * Method to update specific app from Steam.
+   *
+   * @param int $appId
+   *  ID of the application. Barotrauma App ID will be used as default value.
+   *
+   * @return bool
+   */
+  public function steamAppUpdate(int $appId = BMPCoreInterface::BAROTRAUMA_APP_ID): bool;
+
+  /**
    * Method which will return last executed command.
    *
-   * @return string
+   * @return null|string
    */
-  public function getRawSteamCommand(): string;
+  public function getRawSteamCommand(): null|string;
 
   /**
    * Method which will return raw output from last executed command.
    *
-   * @return string
+   * @return null|string
    */
-  public function getRawSteamCommandOutput(): string;
+  public function getRawSteamCommandOutput(): null|string;
 }

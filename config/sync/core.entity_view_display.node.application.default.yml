@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.node.application.body
+    - field.field.node.application.field_app_id
     - field.field.node.application.field_application_type
+    - field.field.node.application.field_build_id
     - field.field.node.application.field_content_package
     - node.type.application
   module:
@@ -21,6 +23,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 3
+    region: content
+  field_app_id:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 1
     region: content
   field_application_type:
@@ -31,6 +41,14 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_build_id:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
   field_content_package:
     type: entity_reference_revisions_entity_view
     label: above
@@ -38,7 +56,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
 hidden:
   links: true
