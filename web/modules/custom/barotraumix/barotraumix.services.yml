@@ -1,0 +1,17 @@
+services:
+  barotraumix.core:
+    class: Drupal\barotraumix\Core
+    arguments: ['@file_system']
+  barotraumix.stream_wrapper:
+    class: Drupal\barotraumix\StreamWrapper\BaroStream
+    tags:
+      - { name: stream_wrapper, scheme: baro }
+  barotraumix.steam:
+    class: Drupal\barotraumix\SteamCMD
+    arguments: ['@file_system', '@entity_type.manager', '@logger.factory']
+  barotraumix.commands:
+    class: \Drupal\barotraumix\Commands\BaroDrush
+    arguments: ['@barotraumix.core', '@barotraumix.steam']
+    tags:
+      - { name: drush.command }
+

@@ -23,7 +23,7 @@
 
 # Ignore .env files as they are personal
 /.env
-/tips.txt
+.lando.local.yml
 
 # Ignore other filesystems.
 /private

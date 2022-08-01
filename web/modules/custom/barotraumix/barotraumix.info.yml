@@ -1,7 +1,7 @@
-name: Barotrauma Mod Portal
+name: Barotraumix
 type: module
-description: 'Core module with hard backend functionality.'
-package: BMP
+description: 'Core module with main backend functionality.'
+package: Barotraumix
 core_version_requirement: 9.x
 
 default_content:

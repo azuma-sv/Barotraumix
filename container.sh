@@ -1,1 +1,2 @@
-docker exec -it barotraumamodportal_appserver_1 bash
+#!/bin/bash
+docker exec -it barotraumix_appserver_1 bash
